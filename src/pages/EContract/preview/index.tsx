@@ -27,6 +27,25 @@ import Page4 from "./Page4";
 import Page5 from "./Page5";
 import Page6 from "./Page6";
 import Page7 from "./Page7";
+import Page8 from "./Page8";
+import ContractPageContainer from "../components/contract-page-container";
+import Page10 from "./Page10";
+import Page11 from "./Page11";
+import Page12 from "./Page12";
+import Page9 from "./Page9";
+import Page13 from "./Page13";
+import Page14 from "./Page14";
+import Page15 from "./Page15";
+import Page16 from "./Page16";
+import Page17 from "./Page17";
+import Page18 from "./Page18";
+import Page19 from "./Page19";
+import Page20 from "./Page20";
+import Page21 from "./Page21";
+import Page22 from "./Page22";
+import Page23 from "./Page23";
+import Page24 from "./Page24";
+import Page25 from "./Page25";
 interface IUserProps {
   test?: string;
 }
@@ -87,25 +106,89 @@ const EContractPreview: React.FC<IUserProps> = () => {
     return (
       <>
         <div id="page1" className="page-container">
-          <Page1 />
+          <ContractPageContainer>
+            <Page1 />
+          </ContractPageContainer>
         </div>
         <div id="page2" className="page-container">
-          <Page2 />
+          <ContractPageContainer>
+            <Page2 />
+          </ContractPageContainer>
         </div>
         <div id="page3" className="page-container">
-          <Page3 />
+          <ContractPageContainer>
+            <Page3 />
+          </ContractPageContainer>
         </div>
         <div id="page4" className="page-container">
-          <Page4 />
+          <ContractPageContainer>
+            <Page4 />
+          </ContractPageContainer>
         </div>
         <div id="page5" className="page-container">
-          <Page5 />
+          <ContractPageContainer>
+            <Page5 />
+          </ContractPageContainer>
         </div>
         <div id="page6" className="page-container">
           <Page6 />
         </div>
         <div id="page7" className="page-container">
           <Page7 />
+        </div>
+        <div id="page8" className="page-container">
+          <Page8 />
+        </div>
+        <div id="page9" className="page-container">
+          <Page9 />
+        </div>
+        <div id="page10" className="page-container">
+          <Page10 />
+        </div>
+        <div id="page11" className="page-container">
+          <Page11 />
+        </div>
+        <div id="page12" className="page-container">
+          <Page12 />
+        </div>
+        <div id="page13" className="page-container">
+          <Page13 />
+        </div>
+        <div id="page14" className="page-container">
+          <Page14 />
+        </div>
+        <div id="page15" className="page-container">
+          <Page15 />
+        </div>
+        <div id="page16" className="page-container">
+          <Page16 />
+        </div>
+        <div id="page17" className="page-container">
+          <Page17 />
+        </div>
+        <div id="page18" className="page-container">
+          <Page18 />
+        </div>
+        <div id="page19" className="page-container">
+          <Page19 />
+        </div>
+        <div id="page20" className="page-container">
+          <Page20 />
+        </div>
+        <div id="page21" className="page-container">
+          <Page21 />
+        </div>
+        <div id="page22" className="page-container">
+          <Page22 />
+        </div>
+        <div id="page23" className="page-container">
+          <Page23 />
+        </div>
+        <div id="page24" className="page-container">
+          <Page24 />
+        </div>
+        <div id="page25" className="page-container">
+          <Page25 />
         </div>
       </>
     );
@@ -118,30 +201,6 @@ const EContractPreview: React.FC<IUserProps> = () => {
     // handleDownloadPdfDom();
     generatePDF();
   };
-  // 导出pdf文件
-  // const exportToPDF = () => {
-  //   // 根据dpi放大，防止图片模糊
-  //   const scale = window.devicePixelRatio > 1 ? window.devicePixelRatio : 2;
-  //   // 下载尺寸 a4 纸 比例
-  //   let pdf = new jsPDF("p", "pt", "a4");
-  //   // let width = contractContentRef?.current!.offsetWidth;
-  //   // let height = contractContentRef?.current!.offsetHeight;
-  //   // const doc = new jsPDF();
-  //   for (let pageNumber = 1; pageNumber <= 25; pageNumber++) {
-  //     // 切换到每一页并绘制到临时 canvas
-  //     setCurrentPage(pageNumber);
-  //     html2canvas(contractContentRef?.current!).then((canvas) => {
-  //       const imgData = canvas.toDataURL("image/png");
-  //       const pdfWidth = pdf.internal.pageSize.getWidth();
-  //       const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-  //       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-  //       if (pageNumber < 25) {
-  //         pdf.addPage();
-  //       }
-  //     });
-  //   }
-  //   pdf.save("myDocument.pdf");
-  // };
 
   const waitForImagesToLoad = (container: any) => {
     const images = container.getElementsByTagName("img");
@@ -159,31 +218,61 @@ const EContractPreview: React.FC<IUserProps> = () => {
     }
     return Promise.all(promises);
   };
+  // 将每页的内容分开导出pdf
   const generatePDF = async () => {
     // 创建一个新的jsPDF实例
     const opt = {
       margin: [0, 0, 0, 0], // 控制PDF页面的margin
       filename: "multiple-pages.pdf", // PDF文件名
-      image: { type: "jpeg", quality: 0.98 }, // 图片格式和质量
-      html2canvas: { scale: 1, useCORS: true },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }, // PDF配置
+      image: { type: "jpeg", quality: 0.6 }, // 图片格式和质量
+      html2canvas: { scale: 1, useCORS: true, logging: false },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+        compress: true,
+      }, // PDF配置
       pagebreak: { mode: ["avoid-all", "css"] }, // 防止内容分页时分隔
     };
     const pages = document.getElementsByClassName("page-container");
+    const pagesArray = Array.from(pages);
     let doc = html2pdf().from(pages[0]).set(opt).toPdf();
-    for (let j = 1; j < 7; j++) {
+    // 删除 pagesArray 数组的第一个元素
+    pagesArray.shift();
+    while (pagesArray.length > 0) {
       doc = doc
         .get("pdf")
         .then((pdf: any) => {
           pdf.addPage();
         })
-        .from(pages[j])
+        .from(pagesArray[0])
         .toContainer()
         .toCanvas()
         .toPdf();
+
+      // 删除已经渲染的页面
+      pagesArray.shift();
     }
+    // 最后一步，在所有页面上添加页码
+    doc.get("pdf").then((pdf: any) => {
+      const totalPages = pdf.internal.getNumberOfPages(); // 获取总页数
+      // 循环所有页，添加页码
+      for (let i = 1; i <= totalPages; i++) {
+        pdf.setPage(i); // 设置当前页
+        pdf.setFontSize(10); // 设置字体大小
+        pdf.text(
+          `Page ${i} of ${totalPages}`,
+          pdf.internal.pageSize.getWidth() / 2,
+          pdf.internal.pageSize.getHeight() - 4,
+          {
+            align: "center",
+          }
+        ); // 添加页码，水平居中
+      }
+    });
     doc.save();
   };
+  // 将整个合同内容导出为PDF文件
   const handleDownloadPdfDom = () => {
     // html2pdf()
     //   .from(contractContentRef.current)

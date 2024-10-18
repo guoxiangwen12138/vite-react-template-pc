@@ -46,187 +46,40 @@ const items: DescriptionsProps["items"] = [
     children: "No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China",
   },
 ];
-// const { imageBase64, setImageBase64 } = useImage();
-// const styles = StyleSheet.create({
-//   page: {
-//     padding: 30,
-//     fontFamily: 'Monocraft',
-//   },
-//   text: {
-//     marginBottom: 12,
-//     fontSize: 12,
-//   },
-// });
 const Page1: React.FC = () => {
   const { imageBase64, setImageBase64, text } = useImage();
   return (
     <div>
-      page1page1page1page1page1 page1page1page1page1page1
-      page1page1page1page1page1 page1page1page1page1page1
-      page1page1page1page1page1 page1page1page1page1page1
-      {text}
-      <img src={imageBase64 as any} />
+      <Typography>
+        Page1 In the process of internal desktop applications development, many
+        different design specs and implementations would be involved, which
+        might cause designers and developers difficulties and duplication and
+        reduce the efficiency of development.
+        <Paragraph>
+          After massive project practice and summaries, Ant Design, a design
+          language for background applications, is refined by Ant UED Team,
+          which aims to{" "}
+          <Text>
+            uniform the user interface specs for internal background projects,
+            lower the unnecessary cost of design differences and implementation
+            and liberate the resources of design and front-end development
+          </Text>
+          .
+        </Paragraph>
+        Guidelines and Resources We supply a series of design principles,
+        practical patterns and high quality design resources (
+        <Text>Sketch</Text> and <Text>Axure</Text>), to help people create their
+        product prototypes beautifully and efficiently. Press{" "}
+        <Text keyboard>Esc</Text> to exit...
+        蚂蚁的企业级产品是一个庞大且复杂的体系。这类产品不仅量级巨大且功能复杂，而且变动和并发频繁，常常需要设计与开发能够快速的做出响应。同时这类产品中有存在很多类似的页面以及组件，可以通过抽象得到一些稳定且高复用性的内容。
+        我们提供完善的设计原则、最佳实践和设计资源文件（
+        <Text>Sketch</Text> 和<Text>Axure</Text>
+        ），来帮助业务快速设计出高质量的产品原型。
+        我们提供完善的设计原则、最佳实践和设计资源文件（
+        <Text>Sketch</Text> 和<Text>Axure</Text>
+        ），来帮助业务快速设计出高质量的产品原型。
+      </Typography>
     </div>
   );
-  // return (
-  //   <div className="page">
-  //     <div>
-  //       <div style={{ textAlign: "center" }}>
-  //         <img
-  //           src={logo}
-  //           alt="logo"
-  //           // style={{ height: "50px", objectFit: "contain" }}
-  //         />
-  //       </div>
-
-  //       <Title level={4} style={{ textAlign: "center", fontWeight: "bold" }}>
-  //         SHORT TERM VEHICLE RENTAL AGREEMENT (LD-270824-43931)
-  //       </Title>
-
-  //       <Text>
-  //         This Short-Term Vehicle Rental Agreement is entered into between
-  //         <b> SPARK DIGITAL PTE LTD </b> ("Company") and <b>usertwo test</b>
-  //         QW784 (“Hirer”) on <b>09 Sep 2024 10:00 - 11:00</b> (“Start Date”) to{" "}
-  //         <b>12 Sep 2024 10:00 - 11:00</b> (“End Date”) and outlines the
-  //         respective rights and obligations of the Parties relating to the usage
-  //         of the Authorised Vehicle.
-  //       </Text>
-  //       <Text>Parties hereby agree as follows:</Text>
-
-  //       <Title level={5}>1. HIRER INFORMATION</Title>
-  //       <div>
-  //         <Text>
-  //           Hirer Full Name: <b>usertwo test</b>
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Hirer NRIC/FIN/Passport: <b>QW784</b>
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Hirer Residential Address: <b>bxnfjf, 546782</b>
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Hirer Contact No.: <b>+6588093286</b>
-  //         </Text>
-  //       </div>
-
-  //       <Title level={5}>2. COMPANY INFORMATION</Title>
-  //       <div>
-  //         <Text>
-  //           Company Name: <b>Spark Digital Pte Ltd</b>
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Company UEN: <b>202139478H</b>
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Company Address: <b>300 Sin Ming Road, Singapore 575626</b>
-  //         </Text>
-  //       </div>
-
-  //       <Title level={5}>3. VEHICLE INFORMATION</Title>
-  //       <div>
-  //         <Text>
-  //           Vehicle Number: <b>SNP9063J</b> (hereinafter referred to as
-  //           “Authorised Vehicle”).
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //       </div>
-  //       <div>
-  //         <Text>
-  //           Vehicle Number: <b>SNP9063J</b> (hereinafter referred to as
-  //           “Authorised Vehicle”).
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //       </div>
-  //       <div>
-  //         <Text>
-  //           Vehicle Number: <b>SNP9063J</b> (hereinafter referred to as
-  //           “Authorised Vehicle”).
-  //         </Text>
-  //         <br />
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis</b>
-  //         </Text>
-  //         <Text>
-  //           Vehicle Make & Model: <b>Toyota Corolla Altis111</b>
-  //         </Text>
-  //         <div>
-  //           <Text>
-  //             Company Name: <b>Spark Digital Pte Ltd</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company UEN: <b>202139478H</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company Address: <b>300 Sin Ming Road, Singapore 575626</b>
-  //           </Text>
-  //         </div>
-  //         <div>
-  //           <Text>
-  //             Company Name: <b>Spark Digital Pte Ltd</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company UEN: <b>202139478H</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company Address: <b>300 Sin Ming Road, Singapore 575626</b>
-  //           </Text>
-  //         </div>
-  //         <div>
-  //           <Text>
-  //             Company Name: <b>Spark Digital Pte Ltd</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company UEN: <b>202139478H</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company Address: <b>300 Sin Ming Road, Singapore 575626</b>
-  //           </Text>
-  //         </div>
-  //         <div>
-  //           <Text>
-  //             Company Name: <b>Spark Digital Pte Ltd</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company UEN: <b>202139478H</b>
-  //           </Text>
-  //           <br />
-  //           <Text>
-  //             Company Address: <b>300 Sin Ming Road, Singapore 999999</b>
-  //           </Text>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 };
 export default Page1;

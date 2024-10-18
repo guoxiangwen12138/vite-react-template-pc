@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import {
@@ -19,12 +20,12 @@ const { Title, Paragraph, Text, Link } = Typography;
 import "./index.less";
 import { useImage } from "../context";
 
-const Page5: React.FC = () => {
+const Page15: React.FC = () => {
   const { imageBase64, setImageBase64, text } = useImage();
   return (
     <div>
       <Typography>
-        <Title>Page5</Title>
+        <Title>Page15</Title>
         <Paragraph>
           In the process of internal desktop applications development, many
           different design specs and implementations would be involved, which
@@ -72,4 +73,4 @@ const Page5: React.FC = () => {
     </div>
   );
 };
-export default Page5;
+export default Page15;
